@@ -3,11 +3,27 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const MongoClient = require('mongodb').MongoClient;
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
+const flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+MongoClient.connect('mongodb://localhost:27017/blogdb', (err, client) => {
+  if (err) {
+    throw err;
+  }
+  const db = client.db('blogdb');
+  const posts = db.collection('posts');
+  const users = db.collection('users');
+  app.locals.posts = posts;
+  app.locals.users = users;
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
