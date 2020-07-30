@@ -25,7 +25,7 @@ router.get('/register', (req, res, next) => {
 
 router.post('/register', (req, res, next) => {
   const { username, password } = req.body;
-  
+
   users
     .insertOne({ username, password })
     .then(() => {

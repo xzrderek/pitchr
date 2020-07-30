@@ -24,15 +24,15 @@ router.post('/create-post', (req, res, next) => {
     const posts = req.app.locals.posts;
     const date = new Date().toISOString();
     posts
-        .insertOne({ title, content, date, author: username})
+        .insertOne({ title, content, date, author: username })
         .then(() => {
             req.flash('success', 'Post registered successfully');
             res.redirect('/create-post');
-          })
-          .catch(() => {
+        })
+        .catch(() => {
             req.flash('error', 'We could not create the blog post');
             res.redirect('/create-post');
-          });
+        });
 });
 
 router.get('/posts', (req, res, next) => {
