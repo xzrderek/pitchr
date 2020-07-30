@@ -49,7 +49,6 @@ router.get('/posts', (req, res, next) => {
 router.get('/posts/:id', (req, res, next) => {
     const posts = req.app.locals.posts;
     const postID = ObjectID(req.params.id);
-    // const post = await posts.find({ _id: postID});
 
     posts
         .find({ _id: postID })
@@ -57,9 +56,6 @@ router.get('/posts/:id', (req, res, next) => {
         .then((post) => {
             res.render('post', { post: post[0] });
         })
-    // .then(post => res.render('post', { post }));
 });
-
-
 
 module.exports = router;
