@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const { render } = require('../app');
 
 router.get('/login', (req, res, next) => {
   const errors = req.flash().error || [];
@@ -12,7 +11,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true,
   failureRedirect: '/login',
 }), (req, res, next) => {
-  res.redirect('/create-post');
+  res.redirect('/posts'); //after registering, you are taken to all posts
 });
 
 router.get('/register', (req, res, next) => {

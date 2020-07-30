@@ -45,14 +45,21 @@ router.get('/posts', (req, res, next) => {
         .then(posts => res.render('posts', { posts }));
 });
 
+
 router.get('/posts/:id', (req, res, next) => {
     const posts = req.app.locals.posts;
     const postID = ObjectID(req.params.id);
+    // const post = await posts.find({ _id: postID});
 
     posts
         .find({ _id: postID })
-        .then(post => res.render('post', { post }));
-        // .then(post => res.render('post', { post }));
+        .toArray()
+        .then((post) => {
+            res.render('post', { post: post[0] });
+        })
+    // .then(post => res.render('post', { post }));
 });
+
+
 
 module.exports = router;
