@@ -8,7 +8,7 @@ const ensureAuthenticated = (req, res, next) => {
         return next();
     }
     res.redirect('/login');
-}
+};
 
 router.get('/create-post', (req, res, next) => {
     const flash = req.flash();

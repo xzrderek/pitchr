@@ -12,7 +12,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true,
   failureRedirect: '/login',
 }), (req, res, next) => {
-  res.redirect('create-post');
+  res.redirect('/create-post');
 });
 
 router.get('/register', (req, res, next) => {
@@ -25,11 +25,12 @@ router.get('/register', (req, res, next) => {
 
 router.post('/register', (req, res, next) => {
   const { username, password } = req.body;
+  const users = req.app.locals.users;
 
   users
     .insertOne({ username, password })
     .then(() => {
-      req.flash('success', 'User registered successfully');
+      req.flash('success', 'User registered successfully')
       res.redirect('/register');
     })
     .catch(() => {
