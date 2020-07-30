@@ -10,12 +10,12 @@ const ensureAuthenticated = (req, res, next) => {
     res.redirect('/login');
 };
 
-router.get('/create-post', (req, res, next) => {
+router.get('/create-post', ensureAuthenticated, (req, res, next) => {
     const flash = req.flash();
     const error = flash.error || [];
     const success = flash.success || [];
 
-    res.render('create-post', { error, success })
+    res.render('create-post', { error, success });
 });
 
 router.post('/create-post', (req, res, next) => {
@@ -23,6 +23,7 @@ router.post('/create-post', (req, res, next) => {
     const username = req.user.username;
     const posts = req.app.locals.posts;
     const date = new Date().toISOString();
+
     posts
         .insertOne({ title, content, date, author: username })
         .then(() => {
@@ -50,7 +51,8 @@ router.get('/posts/:id', (req, res, next) => {
 
     posts
         .find({ _id: postID })
-        .then(post => res.render('post', { post }))
+        .then(post => res.render('post', { post }));
+        // .then(post => res.render('post', { post }));
 });
 
 module.exports = router;

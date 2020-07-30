@@ -1,5 +1,7 @@
+<% include ./_header %>
 <% include ./_flash %>
 
+<h2>Register an account</h2>
 <form action="/register" method="POST">
     <label>
         Username
@@ -11,3 +13,9 @@
     </label>
     <button>Register</button>
 </form>
+
+<nav>
+    <a href="/login">Login</a>
+</nav>
+
+<% include ./_footer %>

@@ -1,11 +1,14 @@
-<% include ./_flash %>
+<% include ./_header %>
+<h2>All posts</h2>
 
 <% for (let i=0; i<posts.length; i++) { %>
     <div class="post">
-        <h2><%= posts[i].title %></h2>
-        <span class="meta">By <%= posts[i].username %> on <%= posts[i].date %>
+        <h2><a href="/posts/<%= posts[i]._id %>"><%= posts[i].title %></a></h2>
+        <span class="meta">By <%= posts[i].author %> on <%= posts[i].date.slice(0, 10) %></span>
         <div class="post__content">
             <%= posts[i].content%>
         </div>
     </div>
 <% } %>
+
+<% include ./_footer %>
