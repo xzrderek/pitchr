@@ -65,11 +65,11 @@ passport.use(new LocalStrategy({
 ));
 
 passport.serializeUser((user, done) => {
-  done(null, user._id);
+  done(null, { id: user._id, username: user.username });
 });
 
-passport.deserializeUser((id, done) => {
-  done(null, { id });
+passport.deserializeUser((userData, done) => {
+  done(null, userData);
 });
 
 app.use('/', indexRouter);
