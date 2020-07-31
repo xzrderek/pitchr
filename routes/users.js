@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const utils = require('../utils')
 
 router.get('/login', (req, res, next) => {
   const errors = req.flash().error || [];
@@ -25,9 +26,10 @@ router.get('/register', (req, res, next) => {
 router.post('/register', (req, res, next) => {
   const { username, password } = req.body;
   const users = req.app.locals.users;
+  const hashedPassword = utils.hashPassword(password);
 
   users
-    .insertOne({ username, password })
+    .insertOne({ username, password: hashedPassword })
     .then(() => {
       req.flash('success', 'User registered successfully')
       res.redirect('/register');

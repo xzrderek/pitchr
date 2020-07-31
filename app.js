@@ -8,6 +8,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('connect-flash');
+const utils = require('./utils');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -56,7 +57,7 @@ passport.use(new LocalStrategy({
           return authCheckDone(null, false, req.flash('error', 'User not found'));
         }
 
-        if (user.password !== password) {
+        if (user.password !== utils.hashPassword(password)) {
           return authCheckDone(null, false, req.flash('error', 'Password incorrect'));
         }
 
