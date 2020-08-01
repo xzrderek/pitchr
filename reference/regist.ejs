@@ -1,0 +1,38 @@
+<% include ./_header %>
+<% include ./_flash %>
+
+<h2>Register an account</h2>
+<form action="/register" method="POST">
+    <label>
+        First Name
+        <input type="text" name="firstName">
+    </label>
+    <label>
+        Last Name
+        <input type="text" name="lastName">
+    </label>
+    <label>
+        Email
+        <input type="text" name="email">
+    </label>
+    <label>
+        Entrepreneur or Investor?
+        <input type="text" name="type"> 
+        <!-- have to make this dropdown -->
+    </label>
+    <label>
+        Username
+        <input type="text" name="username">
+    </label>
+    <label>
+        Password
+        <input type="password" name="password">
+    </label>
+    <button>Register</button>
+</form>
+
+<nav>
+    <a href="/login">Login</a>
+</nav>
+
+<% include ./_footer %>

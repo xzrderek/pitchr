@@ -12,14 +12,14 @@ router.get('/register', (req, res, next) => {
 });
 
 router.post('/register', (req, res, next) => {
-  const { firstName, lastName, email, type, username, password } = req.body;
+  const { name, email, type, username, password } = req.body;
   const users = req.app.locals.users;
   const hashedPassword = utils.hashPassword(password);
 
   users
-    .insertOne({ firstName, lastName, email, type, username, password: hashedPassword })
+    .insertOne({ name, lastName, email, type, username, password: hashedPassword })
     .then(() => {
-      req.flash('success', 'Successfully signed up! Nice to meet you ' + req.body.firstName)
+      req.flash('success', 'Successfully signed up! Nice to meet you ' + req.body.name)
       res.redirect('/login'); //now log in, never actually see the flash because taken to diff page
     })
     .catch(() => {
