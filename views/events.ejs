@@ -27,7 +27,7 @@
                 <div class="col-lg-4">
                     <div class="company-img">
                         <a href="event_details.html"><img
-                                src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg" width=200px
+                                src="<%= posts[i].image>" width=200px
                                 alt=""></a>
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                         </div>
                         <ul>
                             <li><i class="far fa-user"></i>By <%= posts[i].author %></li>
-                            <li><i class="fas fa-calendar"></i><%= posts[i].date.slice(0, 10) %></li>
-                            <li><i class="fas fa-map-marker-alt"></i>location</li>
+                            <li><i class="fas fa-calendar"></i>Posted on <%= posts[i].date.slice(0, 10) %></li>
+                            <li><i class="fas fa-map-marker-alt"></i><%= posts[i].eventdate %></li>
                         </ul>
                     </div>
                 </div>

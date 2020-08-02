@@ -125,8 +125,7 @@
                         <div class="single-job-items mb-30 job-items">
                             <div class="col-lg-3">
                                 <div class="company-img">
-                                    <img src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg"
-                                        width=200px alt="">
+                                    <img src="<%= posts[i].image %>" width=200px alt="">
                                 </div>
                             </div>
                             <div class="col-lg-9">
@@ -141,8 +140,8 @@
                                     </div>
                                     <ul>
                                         <li><i class="far fa-user"></i>By <%= posts[i].author %></li>
-                                        <li><i class="fas fa-calendar"></i>Posted <%= posts[i].date.slice(0, 10) %></li>
-                                        <li><i class="fas fa-map-marker-alt"></i>location</li>
+                                        <li><i class="fas fa-calendar"></i><%= posts[i].eventdate %></li>
+                                        <li><i class="fas fa-clock"></i><%= posts[i].time %></li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,118 +150,6 @@
                 </div>
                 <!-- </div> -->
                 <% } %>
-
-
-
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="event_details.html"><img src="https://ruhackhers.org/img/Hackhers2020.png"
-                                        width=200px alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="event_details.html">
-                                    <h4>HACKHERS</h4>
-                                </a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-calendar"></i>8/01/2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Palo Alto, California</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="event_details.html"><img
-                                        src="https://www.logoinspirations.co/wp-content/uploads/2018/01/cryptic-logo.jpg"
-                                        width=200px alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="event_details.html">
-                                    <h4>CRYPTIC HACKS</h4>
-                                </a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-calendar"></i>12/01/2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>San Francisco, California</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="event_details.html"><img
-                                        src="https://www.logoai.com/uploads/output/2019/03/01/0a656cc19f3f5b41530182a9e03982a4.png?t=1562213169"
-                                        width=200px alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="event_details.html">
-                                    <h4>READY, SET, HACK!</h4>
-                                </a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-calendar"></i>10/01/2021</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Concord, California</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="event_details.html"><img
-                                        src="https://cdn.dribbble.com/users/1604858/screenshots/6329492/zeus-drrible.jpg"
-                                        width=200px alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="event_details.html">
-                                    <h4>ULYSSES HACK</h4>
-                                </a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-calendar"></i>1/01/2022</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Virtual</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="company-img">
-                                <a href="event_details.html"><img
-                                        src="https://cdn.dribbble.com/users/618414/screenshots/3302385/cicada_logo.png"
-                                        width=200px alt=""></a>
-                            </div>
-                            <div class="job-tittle">
-                                <a href="event_details.html">
-                                    <h4>CICADA</h4>
-                                </a>
-                                <ul>
-                                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                                    <li><i class="fas fa-calendar"></i>3/01/2022</li>
-                                    <li><i class="fas fa-map-marker-alt"></i>Virtual</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             </div>
         </section>
@@ -293,9 +180,9 @@
                                     <h4>Contact Info</h4>
                                     <ul>
                                         <li>
-                                            <p>3201 Oak Bluff Lane, Dublin, California</p>
+                                            <p>California</p>
                                         </li>
-                                        <li><a href="#">Phone : 925-549-8359</a></li>
+                                        <li><a href="#">Phone : Call us!</a></li>
                                         <li><a href="#">Email : info@pitchr.org</a></li>
                                     </ul>
                                 </div>

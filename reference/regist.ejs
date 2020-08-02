@@ -167,3 +167,20 @@
 </body>
 
 </html>
+
+
+
+<% include ./_header %>
+
+<div class="post">
+    <h2><%= post.title %></h2>
+    <span class="meta">By <%= post.author %> on <%= post.date.slice(0, 10) %>
+    <div class="post__content">
+        <%= post.content%>
+    </div>
+</div>
+<nav>
+    <a href="/posts">Back to all posts</a>
+</nav>
+
+<% include ./_footer %>

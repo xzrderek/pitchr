@@ -7,7 +7,7 @@ const ensureAuthenticated = (req, res, next) => {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/login');
+    res.redirect('/register');
 };
 
 router.get('/create-post', ensureAuthenticated, (req, res, next) => {
@@ -19,13 +19,13 @@ router.get('/create-post', ensureAuthenticated, (req, res, next) => {
 });
 
 router.post('/create-post', (req, res, next) => {
-    const { title, content } = req.body;
+    const { title, time, eventdate, image, meet, content } = req.body;
     const username = req.user.username;
     const posts = req.app.locals.posts;
     const date = new Date().toISOString();
 
     posts
-        .insertOne({ title, content, date, author: username })
+        .insertOne({ title, eventdate, time, image, content, meet, date, author: username })
         .then(() => {
             req.flash('success', 'Post registered successfully');
             res.redirect('/create-post');
