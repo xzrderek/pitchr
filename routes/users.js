@@ -35,7 +35,7 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', passport.authenticate('local', {
   failureFlash: true,
-  failureRedirect: '/login',
+  failureRedirect: '/register',
 }), (req, res, next) => {
   res.redirect('/posts'); //after registering, you are taken to the profile page, STILL NEED TO MAKE
 });
