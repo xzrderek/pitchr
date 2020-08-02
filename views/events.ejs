@@ -19,58 +19,58 @@
 
 
 <% for (let i=posts.length - 1; i>=0; i--) { %>
-    <div class="post">
-        <div class="col-lg-9 col-md-12">
-            <!-- single-job-content -->
-            <div class="single-job-items mb-30">
-                <div class="job-items">
-                    <div class="col-lg-4">
-                        <div class="company-img">
-                            <a href="event_details.html"><img
-                                    src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg"
-                                    width=200px alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="job-tittle">
-                            <a href="event_details.html">
-                                <h2><a href="/posts/<%= posts[i]._id %>"><%= posts[i].title %></a></h2>
-                            </a>
-                            <!-- <span class="meta">By <%= posts[i].author %> on <%= posts[i].date.slice(0, 10) %></span> -->
-                            <div class="post__content">
-                                <%= posts[i].content%>
-                            </div>
-                            <ul>
-                                <li><i class="far fa-user"></i>By <%= posts[i].author %></li>
-                                <li><i class="fas fa-calendar"></i><%= posts[i].date.slice(0, 10) %></li>
-                                <li><i class="fas fa-map-marker-alt"></i>location</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <% } %>
-
+<div class="post">
     <div class="col-lg-9 col-md-12">
         <!-- single-job-content -->
         <div class="single-job-items mb-30">
             <div class="job-items">
-                <div class="company-img">
-                    <a href="event_details.html"><img src="https://ruhackhers.org/img/Hackhers2020.png"
-                            width=200px alt=""></a>
+                <div class="col-lg-4">
+                    <div class="company-img">
+                        <a href="event_details.html"><img
+                                src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg" width=200px
+                                alt=""></a>
+                    </div>
                 </div>
-                <div class="job-tittle">
-                    <a href="event_details.html">
-                        <h4>HACKHERS</h4>
-                    </a>
-                    <ul>
-                        <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
-                        <li><i class="fas fa-calendar"></i>8/01/2021</li>
-                        <li><i class="fas fa-map-marker-alt"></i>Palo Alto, California</li>
-                    </ul>
+                <div class="col-lg-8">
+                    <div class="job-tittle">
+                        <a href="event_details.html">
+                            <h2><a href="/posts/<%= posts[i]._id %>"><%= posts[i].title %></a></h2>
+                        </a>
+                        <!-- <span class="meta">By <%= posts[i].author %> on <%= posts[i].date.slice(0, 10) %></span> -->
+                        <div class="post__content">
+                            <%= posts[i].content%>
+                        </div>
+                        <ul>
+                            <li><i class="far fa-user"></i>By <%= posts[i].author %></li>
+                            <li><i class="fas fa-calendar"></i><%= posts[i].date.slice(0, 10) %></li>
+                            <li><i class="fas fa-map-marker-alt"></i>location</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<% } %>
+
+<div class="col-lg-9 col-md-12">
+    <!-- single-job-content -->
+    <div class="single-job-items mb-30">
+        <div class="job-items">
+            <div class="company-img">
+                <a href="event_details.html"><img src="https://ruhackhers.org/img/Hackhers2020.png" width=200px
+                        alt=""></a>
+            </div>
+            <div class="job-tittle">
+                <a href="event_details.html">
+                    <h4>HACKHERS</h4>
+                </a>
+                <ul>
+                    <li><i class="far fa-clock"></i>8:30 - 9:30am</li>
+                    <li><i class="fas fa-calendar"></i>8/01/2021</li>
+                    <li><i class="fas fa-map-marker-alt"></i>Palo Alto, California</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
