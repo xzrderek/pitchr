@@ -115,23 +115,22 @@
                 <!-- <div class="row justify-content-center"> -->
 
                 <% for (let i=posts.length - 1; i>=0; i--) { %>
-                <!-- <div class="post"> -->
-                <div class="col-lg-9 col-md-12">
-                    <!-- single-job-content -->
-                    <div class="single-job-items mb-30">
-                        <div class="job-items">
-                            <div class="col-lg-4">
+                <div class="post">
+                    <div class="container">
+                        <!-- single-job-content -->
+                        <div class="single-job-items mb-30 job-items">
+                            <div class="col-lg-3">
                                 <div class="company-img">
-                                    <a href="event_details.html"><img
-                                            src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg"
-                                            width=200px alt=""></a>
+                                    <img src="https://cdn.dribbble.com/users/269321/screenshots/4758063/hmh.jpg"
+                                        width=200px alt="">
                                 </div>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-9">
                                 <div class="job-tittle">
-                                    <a href="event_details.html">
-                                        <h2><a href="/posts/<%= posts[i]._id %>"><%= posts[i].title %></a></h2>
+                                    <a href="/posts/<%= posts[i]._id %>">
+                                        <h4><%= posts[i].title %></h4>
                                     </a>
+
                                     <!-- <span class="meta">By <%= posts[i].author %> on <%= posts[i].date.slice(0, 10) %></span> -->
                                     <div class="post__content">
                                         <%= posts[i].content%>
@@ -143,7 +142,6 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
