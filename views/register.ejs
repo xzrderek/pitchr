@@ -20,20 +20,32 @@
         <div class="frame">
             <div class="nav">
                 <ul class "links">
-                    <li class="signin-active"><a class="btn">Sign in</a></li>
-                    <li class="signup-inactive"><a class="btn">Sign up </a></li>
+                    <!-- <a href="login"> -->
+                        <li class="signin-active"><a class="btn">Sign in</a></li>
+                    <!-- </a> -->
+                    <!-- <a href="register"> -->
+                        <li class="signup-inactive"><a class="btn">Sign up </a></li>
+                    <!-- </a> -->
                 </ul>
             </div>
+            <div>
+                <% include ./_flash %>
+            </div>
             <div ng-app ng-init="checked = false">
-                <form class="form-signin" action="" method="post" name="form">
-                    <label for="username">Username</label>
-                    <input class="form-styling" type="text" name="username" placeholder="" />
-                    <label for="password">Password</label>
-                    <input class="form-styling" type="text" name="password" placeholder="" />
-                    <input type="checkbox" id="checkbox" />
-                    <div class="btn-animate">
+                <form class="form-signin" action="/login" method="POST" name="form">
+                    <label for="username">
+                        Username
+                        <input class="form-styling" type="text" name="username">
+                    </label>
+                    <label for="password">
+                        Password
+                        <input class="form-styling" type="password" name="password">
+                    </label>
+                    <!-- <input type="checkbox" id="checkbox" /> -->
+                    <button>Login</button>
+                    <!-- <div class="btn-animate">
                         <a class="btn-signin">Sign in</a>
-                    </div>
+                    </div> -->
                 </form>
 
                 <form class="form-signup" action="register" method="POST" name="form">
@@ -48,12 +60,11 @@
                     <div class="radio-toolbar">
                         <input type="radio" id="radio1" name="type" value="entrepreneur">
                         <label for="radio1">Entrepreneur</label>
-                      
+
                         <input type="radio" id="radio2" name="type" value="investor">
                         <label for="radio2">Investor</label>
 
-                      </div>
-
+                    </div>
                     <!-- <label>
                         <input type="radio" name="type" value="entrepreneur"> 
                         Entrepreneur

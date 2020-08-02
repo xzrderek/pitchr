@@ -17,10 +17,10 @@ router.post('/register', (req, res, next) => {
   const hashedPassword = utils.hashPassword(password);
 
   users
-    .insertOne({ name, lastName, email, type, username, password: hashedPassword })
+    .insertOne({ name, email, type, username, password: hashedPassword })
     .then(() => {
       req.flash('success', 'Successfully signed up! Nice to meet you ' + req.body.name)
-      res.redirect('/login'); //now log in, never actually see the flash because taken to diff page
+      res.redirect('/register'); //now log in, never actually see the flash because taken to diff page
     })
     .catch(() => {
       req.flash('error', 'Error registering user, try again!');
@@ -37,7 +37,7 @@ router.post('/login', passport.authenticate('local', {
   failureFlash: true,
   failureRedirect: '/login',
 }), (req, res, next) => {
-  res.redirect('/profile'); //after registering, you are taken to the profile page, STILL NEED TO MAKE
+  res.redirect('/posts'); //after registering, you are taken to the profile page, STILL NEED TO MAKE
 });
 
 module.exports = router;
