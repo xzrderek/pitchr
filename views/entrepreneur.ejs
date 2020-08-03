@@ -1,0 +1,348 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Pitchr</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/stylesheets/slicknav.css">
+    <link rel="stylesheet" href="/stylesheets/animate.min.css">
+    <link rel="stylesheet" href="/stylesheets/hamburgers.min.css">
+    <link rel="stylesheet" href="/stylesheets/magnific-popup.css">
+    <link rel="stylesheet" href="/stylesheets/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+    <link rel="stylesheet" href="/stylesheets/slick.css">
+    <link rel="stylesheet" href="/stylesheets/nice-select.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="../images/logo/pitchr.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="../images/logo/pitchr.png" width="180px" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/entrepreneurs">Startups</a></li>
+                                                <li><a href="/investors">Investors</a></li>
+                                                <li><a href="/posts">Events</a></li>
+                                                <li><a href="/calendar">calendar</a></li>
+                                                <li><a href="/profile">Profile</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <!-- <div class="header-right-btn d-none d-lg-block ml-20">
+                                        <a href="signin.html" class="btn header-btn"> sign in</a>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? Hero Start -->
+        <div class="slider-area2">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-20 text-center">
+                                <h2>Startup Details</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <!--? Blog Area Start -->
+        <section class="blog_area single-post-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 posts-list">
+                        <div class="single-post">
+                            <div class="feature-img">
+                                <img class="img-fluid" src="<%= entrepreneur.image %>" alt="">
+                            </div>
+                            <div class="blog_details">
+                                <h2 style="color: #2d2d2d;"><%= entrepreneur.cname %> by <%= entrepreneur.author %>
+                                </h2>
+                                <p class="excert">
+                                    <%= entrepreneur.cdescription %>
+                                </p>
+                                <p class="excert">
+                                    <i><%= entrepreneur.industry %></i>
+                                <p class="excert">
+                                    Seeking <%= entrepreneur.seek %>
+                                </p>
+                                <p class="excert">
+                                    Current revenue: <%= entrepreneur.revenue %>
+                                </p>
+                                </p>
+                                <p class="excert">
+                                    <%= entrepreneur.website %>
+                                </p>
+                                <p class="excert">
+                                    <%= entrepreneur.location %>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="navigation-top">
+                            <div class="d-sm-flex justify-content-between text-center">
+                                <!-- <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> 4
+                                    people like this</p> -->
+                                <div class="col-sm-4 text-center my-2 my-sm-0">
+                                    <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                                </div>
+                                <ul class="social-icons">
+                                    <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- <div class="col-lg-4">
+                        <div class="blog_right_sidebar">
+                            <aside class="single_sidebar_widget search_widget">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder='Search Keyword'
+                                                onfocus="this.placeholder = ''"
+                                                onblur="this.placeholder = 'Search Events'">
+                                            <div class="input-group-append">
+                                                <button class="btns" type="button"><i class="ti-search"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                        type="submit">Search</button>
+                                </form>
+                            </aside>
+                            <aside class="single_sidebar_widget tag_cloud_widget">
+                                <h4 class="widget_title" style="color: #2d2d2d;">Tags</h4>
+                                <ul class="list">
+                                    <li>
+                                        <a href="#">project</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">mental health</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">technology</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">innovation</a>
+                                    </li>
+                                </ul>
+                            </aside>
+                            <aside class="single_sidebar_widget newsletter_widget">
+                                <h4 class="widget_title" style="color: #2d2d2d;">Newsletter</h4>
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Enter email'" placeholder='Enter email'
+                                            required>
+                                    </div>
+                                    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                        type="submit">Subscribe</button>
+                                </form>
+                            </aside>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- Blog Area End -->
+    </main>
+    <footer>
+        <div class="footer-wrapper section-bg2" data-background="../images/gallery/footer_bg.png">
+            <!-- Footer Top-->
+            <div class="footer-area footer-padding">
+                <div class="container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <div class="footer-tittle">
+                                        <div class="footer-logo mb-20">
+                                            <a href="index.html"><img src="../images/logo/pitchr.png" width="180px"
+                                                    alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Contact Info</h4>
+                                    <ul>
+                                        <li>
+                                            <p>California</p>
+                                        </li>
+                                        <li><a href="#">Phone : Call us!</a></li>
+                                        <li><a href="#">Email : info@pitchr.org</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Newsletter</h4>
+                                    <div class="footer-pera footer-pera2">
+                                        <p>Join our newsletter to learn more about the entrepreneurship community.</p>
+                                    </div>
+                                    <!-- Form -->
+                                    <div class="footer-form">
+                                        <div id="mc_embed_signup">
+                                            <form target="_blank"
+                                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                                method="get" class="subscribe_form relative mail_part">
+                                                <input type="email" name="email" id="newsletter-form-email"
+                                                    placeholder="Email Address" class="placeholder hide-on-focus"
+                                                    onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = ' Email Address '">
+                                                <div class="form-icon">
+                                                    <button type="submit" name="submit" id="newsletter-submit"
+                                                        class="email_icon newsletter-submit button-contactForm"><img
+                                                            src="../images/gallery/form.png" alt=""></button>
+                                                </div>
+                                                <div class="mt-10 info"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="footer-border">
+                        <div class="row d-flex justify-content-between align-items-center">
+                            <div class="col-xl-10 col-lg-9 ">
+                                <div class="footer-copy-right">
+                                    <p>
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                        Copyright &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved
+                                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-3">
+                                <div class="footer-social f-right">
+                                    <a href="event_details.html"><i class="fab fa-twitter"></i></a>
+                                    <a href="event_details.html"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="event_details.html"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <div id="back-top">
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="../javascripts/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="../javascripts/vendor/jquery-1.12.4.min.js"></script>
+    <script src="../javascripts/popper.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="../javascripts/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="../javascripts/owl.carousel.min.js"></script>
+    <script src="../javascripts/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="../javascripts/wow.min.js"></script>
+    <script src="../javascripts/animated.headline.js"></script>
+    <script src="../javascripts/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="../javascripts/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="../javascripts/jquery.nice-select.min.js"></script>
+    <script src="../javascripts/jquery.sticky.js"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="../javascripts/jquery.counterup.min.js"></script>
+    <script src="../javascripts/waypoints.min.js"></script>
+    <script src="../javascripts/jquery.countdown.min.js"></script>
+    <script src="../javascripts/hover-direction-snake.min.js"></script>
+
+    <!-- contact js -->
+    <script src="../javascripts/contact.js"></script>
+    <script src="../javascripts/jquery.form.js"></script>
+    <script src="../javascripts/jquery.validate.min.js"></script>
+    <script src="../javascripts/mail-script.js"></script>
+    <script src="../javascripts/jquery.ajaxchimp.min.js"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="../javascripts/plugins.js"></script>
+    <script src="../javascripts/main.js"></script>
+
+</body>
+
+</html>

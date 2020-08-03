@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const utils = require('../utils')
+const utils = require('../utils');
+const ObjectID = require('mongodb').ObjectID;
+
 
 const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -104,11 +106,11 @@ router.post('/eedit', (req, res, next) => {
   const username = req.user.username;
   const contact = req.user.email;
   const type = "entrepreneur";
-  console.log(username);
-  console.log(contact);
-  console.log(type);
-  console.log(req.body);
-  console.log(req.user);
+  // console.log(username);
+  // console.log(contact);
+  // console.log(type);
+  // console.log(req.body);
+  // console.log(req.user);
   // const hashedPassword = utils.hashPassword(password);
 
   entrepreneurs
@@ -134,13 +136,13 @@ router.get('/entrepreneurs', (req, res, next) => {
 
 router.get('/entrepreneurs/:id', (req, res, next) => {
   const entrepreneurs = req.app.locals.entrepreneurs;
-  const entrepreneursID = ObjectID(req.params.id);
+  const entrepreneurID = ObjectID(req.params.id);
 
   entrepreneurs
-      .find({ _id: entrepreneursID })
+      .find({ _id: entrepreneurID })
       .toArray()
-      .then((entrepreneurs) => {
-          res.render('entrepreneurs', { entrepreneurs: entrepreneurs[0] });
+      .then((entrepreneur) => {
+          res.render('entrepreneur', { entrepreneur: entrepreneur[0] });
       })
 });
 

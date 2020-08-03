@@ -95,7 +95,7 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="hero-cap hero-cap2 pt-20 text-center">
-                <h2>Home</h2>
+                <h2>Entrepreneurs and Startups</h2>
               </div>
             </div>
           </div>
@@ -114,18 +114,18 @@
       </div> -->
       <div class="container">
         <div class="row">
-          <p><%= entrepreneurs.length %></p>
+          <!-- <p><%= entrepreneurs.length %></p> -->
           <% for (let i=entrepreneurs.length - 1; i>=0; i--) { %>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-cases mb-40">
-              <div class="cases-img">
-                <img
-                  src="<%= entrepreneurs[i].image %>"
-                  alt="">
+              <div class="company-img">
+                <div class="text-center">
+                  <img src="<%= entrepreneurs[i].image %>" height=200px max-width=200px overflow="hidden" alt="">
+                </div>
               </div>
               <div class="cases-caption">
                 <!-- /entrepreneurs/<%= entrepreneurs[i]._id %> -->
-                <h3><a href=""><%= entrepreneurs[i].cname %></a></h3>
+                <h3><a href="/entrepreneurs/<%= entrepreneurs[i]._id %>"><%= entrepreneurs[i].cname %></a></h3>
                 <p><%= entrepreneurs[i].cdescription %></p>
                 <!-- Progress Bar -->
                 <p><i><%= entrepreneurs[i].industry %></i></p>
@@ -141,8 +141,7 @@
                 </div> -->
                 <!-- / progress -->
                 <div class="prices d-flex justify-content-between">
-
-                  <p>Seeking:<span><%= entrepreneurs[i].seek %></span></p>
+                  <span>Seeking :<%= entrepreneurs[i].seek %></span>
                 </div>
               </div>
             </div>
