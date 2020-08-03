@@ -1,0 +1,36 @@
+<% include ./_header %>
+<% include ./_flash %>
+
+<form action="/create-post" method="POST">
+    <label>
+        entrepreneur
+        <input type="text" name="title">
+    </label>
+    <label>
+        Event Time
+        <input type="text" name="time">
+    </label>
+    <label>
+        Event Date
+        <input type="text" name="eventdate">
+    </label>
+    <label>
+        Image Link
+        <input type="text" name="image">
+    </label>
+    <label>
+        Description
+        <textarea name="content"></textarea>
+    </label>
+    <label>
+        Meeting Link
+        <input type="text" name="meet">
+    </label>
+    <button>Create Post</button>
+</form>
+
+<nav>
+    <a href="/posts">All Events</a>
+</nav>
+
+<% include ./_footer %>
