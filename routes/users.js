@@ -123,4 +123,25 @@ router.post('/eedit', (req, res, next) => {
     });
 });
 
+router.get('/entrepreneurs', (req, res, next) => {
+  const entrepreneurs = req.app.locals.entrepreneurs;
+
+  entrepreneurs
+      .find({})
+      .toArray()
+      .then(entrepreneurs => res.render('entrepreneurs', { entrepreneurs }));
+});
+
+router.get('/entrepreneurs/:id', (req, res, next) => {
+  const entrepreneurs = req.app.locals.entrepreneurs;
+  const entrepreneursID = ObjectID(req.params.id);
+
+  entrepreneurs
+      .find({ _id: entrepreneursID })
+      .toArray()
+      .then((entrepreneurs) => {
+          res.render('entrepreneurs', { entrepreneurs: entrepreneurs[0] });
+      })
+});
+
 module.exports = router;

@@ -13,8 +13,8 @@ const utils = require('./utils');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
-// const entrepreneurRouter = require('./routes/posts');
-// const investorRouter = require('./routes/posts');
+const entrepreneurRouter = require('./routes/users');
+const investorRouter = require('./routes/users');
 
 
 var app = express();
@@ -84,8 +84,8 @@ passport.deserializeUser((userData, done) => {
 app.use('/', indexRouter);
 app.use('/', postsRouter);
 app.use('/', usersRouter);
-// app.use('/', entrepreneurRouter);
-// app.use('/', investorRouter)
+app.use('/', entrepreneurRouter);
+app.use('/', investorRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

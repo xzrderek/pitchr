@@ -60,10 +60,12 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a href="index">Home</a></li>
-                        <li><a href="posts">Events</a></li>
-                        <li><a href="calendar">calendar</a></li>
-                        <li><a href="profile">Profile</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/entrepreneurs">Startups</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/posts">Events</a></li>
+                        <li><a href="/calendar">calendar</a></li>
+                        <li><a href="/profile">Profile</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -103,8 +105,49 @@
     <!-- Hero End -->
     <!-- Our Cases Start -->
     <div class="our-cases-area section-padding30">
+      <!-- <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+          <div class="section-tittle text-center mb-80">
+            <span>Explore!</span>
+          </div>
+        </div>
+      </div> -->
       <div class="container">
         <div class="row">
+          <p><%= entrepreneurs.length %></p>
+          <% for (let i=entrepreneurs.length - 1; i>=0; i--) { %>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="<%= entrepreneurs[i].image %>"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <!-- /entrepreneurs/<%= entrepreneurs[i]._id %> -->
+                <h3><a href=""><%= entrepreneurs[i].cname %></a></h3>
+                <p><%= entrepreneurs[i].cdescription %></p>
+                <!-- Progress Bar -->
+                <p><i><%= entrepreneurs[i].industry %></i></p>
+                <!-- <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar1" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="70"></span>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span><%= entrepreneurs[i].seek %></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="single-cases mb-40">
               <div class="cases-img">
@@ -114,7 +157,7 @@
               </div>
               <div class="cases-caption">
                 <h3><a href="Profile_details.html">Derek Xu</a></h3>
-                <p>profile match</p>
+                <p>profile </p>
                 <!-- Progress Bar -->
                 <div class="single-skill mb-15">
                   <div class="bar-progress">
@@ -334,8 +377,8 @@
                           onblur="this.placeholder = ' Email Address '">
                         <div class="form-icon">
                           <button type="submit" name="submit" id="newsletter-submit"
-                            class="email_icon newsletter-submit button-contactForm"><img
-                              src="/images/gallery/form.png" alt=""></button>
+                            class="email_icon newsletter-submit button-contactForm"><img src="/images/gallery/form.png"
+                              alt=""></button>
                         </div>
                         <div class="mt-10 info"></div>
                       </form>
