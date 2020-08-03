@@ -1,36 +1,45 @@
 <% include ./_header %>
 <% include ./_flash %>
 
-<form action="/create-post" method="POST">
+<form action="/eedit" method="POST">
+    <h2>Entrepreneur Profile</h2>
     <label>
-        entrepreneur
-        <input type="text" name="title">
+        Company Name
+        <input type="text" name="cname">
     </label>
     <label>
-        Event Time
-        <input type="text" name="time">
+        Industry
+        <input type="text" name="industry">
     </label>
     <label>
-        Event Date
-        <input type="text" name="eventdate">
+        Investment Seeking
+        <input type="text" name="seek">
     </label>
     <label>
-        Image Link
+        Company Description
+        <textarea name="cdescription"></textarea>
+    </label>
+    <label>
+        Profile Picture Link
         <input type="text" name="image">
     </label>
     <label>
-        Description
-        <textarea name="content"></textarea>
+        Website
+        <input type="text" name="website">
     </label>
     <label>
-        Meeting Link
-        <input type="text" name="meet">
+        Revenue
+        <input type="text" name="revenue">
     </label>
-    <button>Create Post</button>
+    <label>
+        Location
+        <input type="text" name="location">
+    </label>
+    <button>Create Profile</button>
 </form>
 
 <nav>
-    <a href="/posts">All Events</a>
+    <a href="/">Home</a>
 </nav>
 
 <% include ./_footer %>

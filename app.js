@@ -13,6 +13,9 @@ const utils = require('./utils');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
+// const entrepreneurRouter = require('./routes/posts');
+// const investorRouter = require('./routes/posts');
+
 
 var app = express();
 
@@ -23,8 +26,12 @@ MongoClient.connect('mongodb://localhost:27017/blogdb', (err, client) => {
   const db = client.db('blogdb');
   const posts = db.collection('posts');
   const users = db.collection('users');
+  const entrepreneurs = db.collection('entrepreneurs');
+  const investors = db.collection('investors');
   app.locals.posts = posts;
   app.locals.users = users;
+  app.locals.entrepreneurs = entrepreneurs;
+  app.locals.investors = investors;
 })
 
 // view engine setup
@@ -67,7 +74,7 @@ passport.use(new LocalStrategy({
 ));
 
 passport.serializeUser((user, done) => {
-  done(null, { id: user._id, username: user.username });
+  done(null, { id: user._id, username: user.username, email: user.email });
 });
 
 passport.deserializeUser((userData, done) => {
@@ -77,6 +84,8 @@ passport.deserializeUser((userData, done) => {
 app.use('/', indexRouter);
 app.use('/', postsRouter);
 app.use('/', usersRouter);
+// app.use('/', entrepreneurRouter);
+// app.use('/', investorRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

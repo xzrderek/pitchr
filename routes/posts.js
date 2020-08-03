@@ -23,7 +23,8 @@ router.post('/create-post', (req, res, next) => {
     const username = req.user.username;
     const posts = req.app.locals.posts;
     const date = new Date().toISOString();
-
+    // console.log(req.body);
+    // console.log(req.user);
     posts
         .insertOne({ title, eventdate, time, image, content, meet, date, author: username })
         .then(() => {
