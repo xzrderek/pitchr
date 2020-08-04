@@ -1,0 +1,471 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title> Pitchr</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+
+
+  <!-- CSS here -->
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.min.css">
+  <link rel="stylesheet" href="/stylesheets/slicknav.css">
+  <link rel="stylesheet" href="/stylesheets/flaticon.css">
+  <link rel="stylesheet" href="/stylesheets/progressbar_barfiller.css">
+  <link rel="stylesheet" href="/stylesheets/gijgo.css">
+  <link rel="stylesheet" href="/stylesheets/animate.min.css">
+  <link rel="stylesheet" href="/stylesheets/animated-headline.css">
+  <link rel="stylesheet" href="/stylesheets/magnific-popup.css">
+  <link rel="stylesheet" href="/stylesheets/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/stylesheets/themify-icons.css">
+  <link rel="stylesheet" href="/stylesheets/slick.css">
+  <link rel="stylesheet" href="/stylesheets/nice-select.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <!-- ? Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle"></div>
+        <div class="preloader-img pere-text">
+          <img src="images/logo/pitchr.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Preloader Start -->
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header ">
+
+        <div class="header-bottom  header-sticky">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <!-- Logo -->
+              <div class="col-xl-2 col-lg-2">
+                <div class="logo">
+                  <a href="index.html"><img src="/images/logo/pitchr.png" width="180px" alt=""></a>
+                </div>
+              </div>
+              <div class="col-xl-10 col-lg-10">
+                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                  <!-- Main-menu -->
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/entrepreneurs">Startups</a></li>
+                        <li><a href="/investors">Investors</a></li>
+                        <li><a href="/posts">Events</a></li>
+                        <li><a href="/calendar">calendar</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                  <!-- Header-btn -->
+                  <!-- <div class="header-right-btn d-none d-lg-block ml-20">
+                    <a href="signin.html" class="btn header-btn"> sign in</a>
+                  </div> -->
+                </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+  </header>
+  <!-- header end -->
+  <main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+      <div class="slider-height2 d-flex align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-12">
+              <div class="hero-cap hero-cap2 pt-20 text-center">
+                <h2>Investors</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero End -->
+    <!-- Our Cases Start -->
+    <div class="our-cases-area section-padding30">
+      <!-- <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-12">
+          <div class="section-tittle text-center mb-80">
+            <span>Explore!</span>
+          </div>
+        </div>
+      </div> -->
+      <div class="container">
+        <div class="row">
+          <!-- <p><%= entrepreneurs.length %></p> -->
+          <% for (let i=investors.length - 1; i>=0; i--) { %>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="company-img">
+                <div class="text-center">
+                  <img src="<%= investors[i].image %>" height=200px max-width=200px overflow="hidden" alt="">
+                </div>
+              </div>
+              <div class="cases-caption">
+                <!-- /investors/<%= investors[i]._id %> %> -->
+                <h3><a href=""><%= investors[i].name %></a></h3>
+                <p><%= investors[i].background %></p>
+                <!-- Progress Bar -->
+                <p><i><%= investors[i].industry %></i></p>
+                <!-- <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar1" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="70"></span>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+                  <span>Willing :<%= investors[i].give %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% } %>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3eIYc8wwdbNOL4KkiD-lWIb1J0M179Ob4XglQIvPc3IudVwRhYaA5qtXxxZ3vOCUf8dSJ494j89sVilPBeT7R6iRFrXEiEAr7wzdl1fF0LLedHvWt4O87KSSfoRNciCPZmcophNzoJ561N00Iz7ctSI5A=w700-h938-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Derek Xu</a></h3>
+                <p>profile </p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar1" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="70"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3cGbj4kWrntWt08FtUkRdW6LRWACXYq1Ju5EaMeXEASspqpjtjbCsUD1zZZpRa1ujhzupjJx0ct8ae-E34O-xVWkpefamEQFinceI8cOU8kXd5GBBIiD1_DrdTyudQLIhjzw2sFSftj-_5GZevegDW_Ew=w703-h937-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Tim Zeng</a></h3>
+                <p>profile match</p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar2" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="85"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3e8nXhZNWaBVNFM3XnjfAOUTE0pAsmn0igcQdr2y6hoV0P3D7S83Z-65vvlM_gxi7WDkhHiaQWnZTniFL6fN84zJst1DWcVHjFF6Xp7YpDkN0tqnP_XCaTlzMuYpULqAJTVQ0VKrmoeA5bFmUDBDInhhw=w703-h937-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Bilal Ron</a></h3>
+                <p>profile match</p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar3" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="50"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3ca34654zHj287a1YV9OUdmUQWOKgEBtlb_jipYVrN1-_xrErNK953tZuOH0oe2-deXxWnySBIcOKhcUGCUCSGRz-PoyzVyvB2Ck_ux3PhaAvhjP-DWrHzKNOhAgDtbcdkKvxlCv6eFURjvz_s9h56tjQ=w469-h937-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Derek Xu</a></h3>
+                <p>profile match</p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar4" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="70"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3e9qQOVSkwWXpNT4VXPg2TwEsY0k_-ukom2FyJqS8-Xw7C_ebj63EVNXUry52RduPxWX_pk4a1VUEkMtNsF6Y15qm_TfOggj2KdtZo0GKtajdVECemqeu0PouDE2uU67mb9Scx-N5KsVYctTs5zmp0dsw=w469-h937-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Bilal Ron</a></h3>
+                <p>profile match</p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar5" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="50"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="single-cases mb-40">
+              <div class="cases-img">
+                <img
+                  src="https://lh3.googleusercontent.com/pw/ACtC-3cMjxijIur7UQpq4yx76ntvZNB2GPTgheut6q4A3DkC8UyYYxlHMoPskxRwjkhzWFQlBTh4Jf83qZppbtygagwZyGBkda2sd9aosN3QNLGA8uGzP0vOlRmttgIbuf8X9qXnklzosqxEfS69x-NzSPh1QQ=w469-h937-no?authuser=0"
+                  alt="">
+              </div>
+              <div class="cases-caption">
+                <h3><a href="Profile_details.html">Tim Zeng</a></h3>
+                <p>profile match</p>
+                <!-- Progress Bar -->
+                <div class="single-skill mb-15">
+                  <div class="bar-progress">
+                    <div id="bar6" class="barfiller">
+                      <div class="tipWrap">
+                        <span class="tip"></span>
+                      </div>
+                      <span class="fill" data-percentage="85"></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- / progress -->
+                <div class="prices d-flex justify-content-between">
+
+                  <p>Seeking:<span> $35,000</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Our Cases End -->
+  </main>
+  <footer>
+    <div class="footer-wrapper section-bg2" data-background="/images/gallery/footer_bg.png">
+      <!-- Footer Top-->
+      <div class="footer-area footer-padding">
+        <div class="container">
+          <div class="row d-flex justify-content-between">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+              <div class="single-footer-caption mb-50">
+                <div class="single-footer-caption mb-30">
+                  <div class="footer-tittle">
+                    <div class="footer-logo mb-20">
+                      <a href="index.html"><img src="/images/logo/pitchr.png" width="180px" alt=""></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+              <div class="single-footer-caption mb-50">
+                <div class="footer-tittle">
+                  <h4>Contact Info</h4>
+                  <ul>
+                    <li>
+                      <p>California</p>
+                    </li>
+                    <li><a href="Profile_details.html">Phone : Call us!</a></li>
+                    <li><a href="Profile_details.html">Email : info@pitchr.org</a></li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+              <div class="single-footer-caption mb-50">
+                <div class="footer-tittle">
+                  <h4>Newsletter</h4>
+                  <div class="footer-pera footer-pera2">
+                    <p>Join our newsletter to learn more about the entrepreneurship community.</p>
+                  </div>
+                  <!-- Form -->
+                  <div class="footer-form">
+                    <div id="mc_embed_signup">
+                      <form target="_blank"
+                        action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                        method="get" class="subscribe_form relative mail_part">
+                        <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                          class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = ' Email Address '">
+                        <div class="form-icon">
+                          <button type="submit" name="submit" id="newsletter-submit"
+                            class="email_icon newsletter-submit button-contactForm"><img src="/images/gallery/form.png"
+                              alt=""></button>
+                        </div>
+                        <div class="mt-10 info"></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- footer-bottom -->
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="footer-border">
+            <div class="row d-flex justify-content-between align-items-center">
+              <div class="col-xl-10 col-lg-9 ">
+                <div class="footer-copy-right">
+                  <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  </p>
+                </div>
+              </div>
+              <div class="col-xl-2 col-lg-3">
+                <div class="footer-social f-right">
+                  <a href="event_details.html"><i class="fab fa-twitter"></i></a>
+                  <a href="event_details.html"><i class="fab fa-facebook-f"></i></a>
+                  <a href="event_details.html"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Up -->
+  <div id="back-top">
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+  </div>
+
+  <!-- JS here -->
+
+  <script src="javascripts/vendor/modernizr-3.5.0.min.js"></script>
+  <!-- Jquery, Popper, Bootstrap -->
+  <script src="javascripts/vendor/jquery-1.12.4.min.js"></script>
+  <script src="javascripts/popper.min.js"></script>
+  <script src="javascripts/bootstrap.min.js"></script>
+  <!-- Jquery Mobile Menu -->
+  <script src="javascripts/jquery.slicknav.min.js"></script>
+
+  <!-- Jquery Slick , Owl-Carousel Plugins -->
+  <script src="javascripts/owl.carousel.min.js"></script>
+  <script src="javascripts/slick.min.js"></script>
+  <!-- One Page, Animated-HeadLin -->
+  <script src="javascripts/wow.min.js"></script>
+  <script src="javascripts/animated.headline.js"></script>
+  <script src="javascripts/jquery.magnific-popup.js"></script>
+
+  <!-- Date Picker -->
+  <script src="javascripts/gijgo.min.js"></script>
+  <!-- Nice-select, sticky -->
+  <script src="javascripts/jquery.nice-select.min.js"></script>
+  <script src="javascripts/jquery.sticky.js"></script>
+  <!-- Progress -->
+  <script src="javascripts/jquery.barfiller.js"></script>
+
+  <!-- counter , waypoint,Hover Direction -->
+  <script src="javascripts/jquery.counterup.min.js"></script>
+  <script src="javascripts/waypoints.min.js"></script>
+  <script src="javascripts/jquery.countdown.min.js"></script>
+  <script src="javascripts/hover-direction-snake.min.js"></script>
+
+  <!-- contact js -->
+  <script src="javascripts/contact.js"></script>
+  <script src="javascripts/jquery.form.js"></script>
+  <script src="javascripts/jquery.validate.min.js"></script>
+  <script src="javascripts/mail-script.js"></script>
+  <script src="javascripts/jquery.ajaxchimp.min.js"></script>
+
+  <!-- Jquery Plugins, main Jquery -->
+  <script src="javascripts/plugins.js"></script>
+  <script src="javascripts/main.js"></script>
+
+</body>
+
+</html>

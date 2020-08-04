@@ -56,7 +56,7 @@ router.post('/login', passport.authenticate('local', {
     res.redirect('/eedit');
   }
   else if (usertype == ("investor")) {
-    req.flash('success', 'Successfully signed up! You signed up as an investor. Nice to meet you ' + req.body.name)
+    req.flash('success', 'Successfully signed up! You signed up as an investor. Nice to meet you ' + req.user.name)
     res.redirect('/iedit');
   }
   else {
@@ -66,7 +66,7 @@ router.post('/login', passport.authenticate('local', {
 });
 
 // investor edit
-router.get('/iedit', (req, res, next) => {
+router.get('/iedit', ensureAuthenticated, (req, res, next) => {
   const flash = req.flash();
   const error = flash.error || [];
   const success = flash.success || [];
@@ -75,23 +75,51 @@ router.get('/iedit', (req, res, next) => {
 });
 
 router.post('/iedit', (req, res, next) => {
-  const { companyname, companydescription, type, username, password } = req.body;
-  const users = req.app.locals.users;
-  const hashedPassword = utils.hashPassword(password);
+  const { industry, give, background, image, website, experience, interests, location } = req.body;
+  const investors = req.app.locals.investors;
+  const username = req.user.username;
+  const contact = req.user.email;
+  const type = "investor";
+  // console.log(username);
+  // console.log(contact);
+  // console.log(type);
+  // console.log(req.body);
+  // console.log(req.user);
+  // const hashedPassword = utils.hashPassword(password);
 
-  users
-    .insertOne({})
+  investors
+    .insertOne({ industry, give, background, image, website, experience, interests, location, name: username, info: contact , type: type})
     .then(() => {
-      req.flash('success', 'Successfully logged in! Nice to meet you ' + req.body.username)
-      res.redirect('/iedit'); //now log in, never actually see the flash because taken to diff page
+      req.flash('success', 'Profile successfully set up')
+      res.redirect('/investors'); //now log in, never actually see the flash because taken to diff page
     })
     .catch(() => {
-      req.flash('error', 'Error registering user, try again!');
+      req.flash('error', 'Error setting profile, try again!');
       res.redirect('/iedit');
     });
 });
 
-// entrepreneur edit
+router.get('/investors', (req, res, next) => {
+  const investors = req.app.locals.investors;
+
+  investors
+      .find({})
+      .toArray()
+      .then(investors => res.render('investors', { investors }));
+});
+
+router.get('/investors/:id', (req, res, next) => {
+  const investors = req.app.locals.investors;
+  const investorID = ObjectID(req.params.id);
+
+  investors
+      .find({ _id: investorID })
+      .toArray()
+      .then((investor) => {
+          res.render('investor', { investor: investor[0] });
+      })
+});
+
 router.get('/eedit', ensureAuthenticated, (req, res, next) => {
   const flash = req.flash();
   const error = flash.error || [];
@@ -117,7 +145,7 @@ router.post('/eedit', (req, res, next) => {
     .insertOne({ cname, cdescription, seek, industry, image, website, revenue, location, author: username, info: contact , type: type})
     .then(() => {
       req.flash('success', 'Profile successfully set up')
-      res.redirect('/'); //now log in, never actually see the flash because taken to diff page
+      res.redirect('/entrepreneurs'); //now log in, never actually see the flash because taken to diff page
     })
     .catch(() => {
       req.flash('error', 'Error setting profile, try again!');

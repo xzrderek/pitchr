@@ -89,7 +89,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-20 text-center">
-                                <h2>Startup Details</h2>
+                                <h2>Investor Details</h2>
                             </div>
                         </div>
                     </div>
@@ -104,30 +104,33 @@
                     <div class="col-lg-12 posts-list">
                         <div class="single-post">
                             <div class="feature-img">
-                                <img class="img-fluid" src="<%= entrepreneur.image %>" alt="">
+                                <img class="img-fluid" src="<%= investor.image %>" alt="">
                             </div>
                             <div class="blog_details">
-                                <h2 style="color: #2d2d2d;"><%= entrepreneur.cname %> by <%= entrepreneur.author %>
+                                <h2 style="color: #2d2d2d;"><%= investor.name %>
                                 </h2>
                                 <p class="excert">
-                                    <%= entrepreneur.cdescription %>
+                                    <%= investor.background %>
                                 </p>
                                 <p class="excert">
-                                    <i><%= entrepreneur.industry %></i>
+                                    <i><%= investor.industry %></i>
                                 <p class="excert">
-                                    Seeking <%= entrepreneur.seek %>
+                                    Willing to give <%= investor.give %>
                                 </p>
                                 <p class="excert">
-                                    Current revenue: <%= entrepreneur.revenue %>
+                                    Investing experience <%= investor.experience %>
                                 </p>
                                 <p class="excert">
-                                    <%= entrepreneur.website %>
+                                    Interests: <%= investor.interests %>
                                 </p>
                                 <p class="excert">
-                                    <%= entrepreneur.location %>
+                                    <%= investor.website %>
                                 </p>
                                 <p class="excert">
-                                    Contact: <%= entrepreneur.info %>
+                                    <%= investor.location %>
+                                </p>
+                                <p class="excert">
+                                    Contact: <%= investor.info %>
                                 </p>
                             </div>
                         </div>
