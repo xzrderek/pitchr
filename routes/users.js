@@ -7,7 +7,7 @@ const ObjectID = require('mongodb').ObjectID;
 
 const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
-      return next();
+    return next();
   }
   res.redirect('/register');
 };
@@ -77,7 +77,7 @@ router.get('/iedit', ensureAuthenticated, (req, res, next) => {
 router.post('/iedit', (req, res, next) => {
   const { industry, give, background, image, website, experience, interests, location } = req.body;
   const investors = req.app.locals.investors;
-  const username = req.user.username;
+  const name = req.user.name;
   const contact = req.user.email;
   const type = "investor";
   // console.log(username);
@@ -88,7 +88,7 @@ router.post('/iedit', (req, res, next) => {
   // const hashedPassword = utils.hashPassword(password);
 
   investors
-    .insertOne({ industry, give, background, image, website, experience, interests, location, name: username, info: contact , type: type})
+    .insertOne({ industry, give, background, image, website, experience, interests, location, name: name, info: contact, type: type })
     .then(() => {
       req.flash('success', 'Profile successfully set up')
       res.redirect('/investors'); //now log in, never actually see the flash because taken to diff page
@@ -103,9 +103,9 @@ router.get('/investors', (req, res, next) => {
   const investors = req.app.locals.investors;
 
   investors
-      .find({})
-      .toArray()
-      .then(investors => res.render('investors', { investors }));
+    .find({})
+    .toArray()
+    .then(investors => res.render('investors', { investors }));
 });
 
 router.get('/investors/:id', (req, res, next) => {
@@ -113,11 +113,11 @@ router.get('/investors/:id', (req, res, next) => {
   const investorID = ObjectID(req.params.id);
 
   investors
-      .find({ _id: investorID })
-      .toArray()
-      .then((investor) => {
-          res.render('investor', { investor: investor[0] });
-      })
+    .find({ _id: investorID })
+    .toArray()
+    .then((investor) => {
+      res.render('investor', { investor: investor[0] });
+    })
 });
 
 router.get('/eedit', ensureAuthenticated, (req, res, next) => {
@@ -131,7 +131,7 @@ router.get('/eedit', ensureAuthenticated, (req, res, next) => {
 router.post('/eedit', (req, res, next) => {
   const { cname, cdescription, seek, industry, image, website, revenue, location } = req.body;
   const entrepreneurs = req.app.locals.entrepreneurs;
-  const username = req.user.username;
+  const name = req.user.name;
   const contact = req.user.email;
   const type = "entrepreneur";
   // console.log(username);
@@ -142,7 +142,7 @@ router.post('/eedit', (req, res, next) => {
   // const hashedPassword = utils.hashPassword(password);
 
   entrepreneurs
-    .insertOne({ cname, cdescription, seek, industry, image, website, revenue, location, author: username, info: contact , type: type})
+    .insertOne({ cname, cdescription, seek, industry, image, website, revenue, location, author: name, info: contact, type: type })
     .then(() => {
       req.flash('success', 'Profile successfully set up')
       res.redirect('/entrepreneurs'); //now log in, never actually see the flash because taken to diff page
@@ -157,9 +157,9 @@ router.get('/entrepreneurs', (req, res, next) => {
   const entrepreneurs = req.app.locals.entrepreneurs;
 
   entrepreneurs
-      .find({})
-      .toArray()
-      .then(entrepreneurs => res.render('entrepreneurs', { entrepreneurs }));
+    .find({})
+    .toArray()
+    .then(entrepreneurs => res.render('entrepreneurs', { entrepreneurs }));
 });
 
 router.get('/entrepreneurs/:id', (req, res, next) => {
@@ -167,11 +167,11 @@ router.get('/entrepreneurs/:id', (req, res, next) => {
   const entrepreneurID = ObjectID(req.params.id);
 
   entrepreneurs
-      .find({ _id: entrepreneurID })
-      .toArray()
-      .then((entrepreneur) => {
-          res.render('entrepreneur', { entrepreneur: entrepreneur[0] });
-      })
+    .find({ _id: entrepreneurID })
+    .toArray()
+    .then((entrepreneur) => {
+      res.render('entrepreneur', { entrepreneur: entrepreneur[0] });
+    })
 });
 
 module.exports = router;
