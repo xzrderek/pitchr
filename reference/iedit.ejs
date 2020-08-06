@@ -1,0 +1,49 @@
+<% include ./_header %>
+<% include ./_flash %>
+
+<form action="/iedit" method="POST">
+    <h2>Investor Profile</h2>
+    <!-- <label>
+        Company Name
+        <input type="text" name="">
+    </label> -->
+    <label>
+        Industry
+        <input type="text" name="industry">
+    </label>
+    <label>
+        Willing to Invest
+        <input type="text" name="give">
+    </label>
+    <label>
+        Career Background
+        <textarea name="background"></textarea>
+    </label>
+    <label>
+        Investing Experience
+        <input type="text" name="experience">
+    </label>
+    <label>
+        Interests
+        <input type="text" name="interests">
+    </label>
+    <label>
+        Profile Picture Link
+        <input type="text" name="image">
+    </label>
+    <label>
+        Website
+        <input type="text" name="website">
+    </label>
+    <label>
+        Location
+        <input type="text" name="location">
+    </label>
+    <button>Create Profile</button>
+</form>
+
+<nav>
+    <a href="/">Home</a>
+</nav>
+
+<% include ./_footer %>
