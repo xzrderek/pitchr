@@ -7,7 +7,7 @@
     <title> Pitchr</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
 
 
     <!-- CSS here -->
@@ -116,40 +116,6 @@
                 </div>
 
                 <!-- <div class="row justify-content-center"> -->
-
-                <% for (let i=posts.length - 1; i>=0; i--) { %>
-                <div class="post">
-                    <div class="container">
-                        <!-- single-job-content -->
-                        <div class="single-job-items mb-30 job-items">
-                            <div class="col-lg-3">
-                                <div class="company-img">
-                                    <img src="<%= posts[i].image %>" width=200px alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
-                                <div class="job-tittle">
-                                    <a href="/posts/<%= posts[i]._id %>">
-                                        <h4><%= posts[i].title %></h4>
-                                    </a>
-
-                                    <!-- <span class="meta">By <%= posts[i].author %> on <%= posts[i].date.slice(0, 10) %></span> -->
-                                    <div class="post__content">
-                                        <%= posts[i].content%>
-                                    </div>
-                                    <ul>
-                                        <li><i class="far fa-user"></i>By <%= posts[i].author %></li>
-                                        <li><i class="fas fa-calendar"></i><%= posts[i].eventdate %></li>
-                                        <li><i class="fas fa-clock"></i><%= posts[i].time %></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- </div> -->
-                <% } %>
-            </div>
             </div>
         </section>
         <br>
@@ -166,8 +132,7 @@
                                 <div class="single-footer-caption mb-30">
                                     <div class="footer-tittle">
                                         <div class="footer-logo mb-20">
-                                            <a href="/"><img src="/images/logo/pitchr.png" width="180px"
-                                                    alt=""></a>
+                                            <a href="/"><img src="/images/logo/pitchr.png" width="180px" alt=""></a>
                                         </div>
                                     </div>
                                 </div>
