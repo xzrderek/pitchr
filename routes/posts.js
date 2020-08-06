@@ -37,7 +37,7 @@ router.post('/create-post', (req, res, next) => {
         });
 });
 
-router.get('/posts', (req, res, next) => {
+router.get('/posts', ensureAuthenticated, (req, res, next) => {
     const posts = req.app.locals.posts;
 
     posts
@@ -47,7 +47,7 @@ router.get('/posts', (req, res, next) => {
 });
 
 
-router.get('/posts/:id', (req, res, next) => {
+router.get('/posts/:id', ensureAuthenticated, (req, res, next) => {
     const posts = req.app.locals.posts;
     const postID = ObjectID(req.params.id);
 

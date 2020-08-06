@@ -15,6 +15,7 @@ var usersRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
 const entrepreneurRouter = require('./routes/users');
 const investorRouter = require('./routes/users');
+const profileRouter = require('./routes/profile');
 
 
 var app = express();
@@ -86,6 +87,7 @@ app.use('/', postsRouter);
 app.use('/', usersRouter);
 app.use('/', entrepreneurRouter);
 app.use('/', investorRouter)
+app.use('/', profileRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

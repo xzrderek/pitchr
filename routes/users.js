@@ -99,7 +99,7 @@ router.post('/iedit', (req, res, next) => {
     });
 });
 
-router.get('/investors', (req, res, next) => {
+router.get('/investors', ensureAuthenticated, (req, res, next) => {
   const investors = req.app.locals.investors;
 
   investors
@@ -108,7 +108,7 @@ router.get('/investors', (req, res, next) => {
     .then(investors => res.render('investors', { investors }));
 });
 
-router.get('/investors/:id', (req, res, next) => {
+router.get('/investors/:id', ensureAuthenticated, (req, res, next) => {
   const investors = req.app.locals.investors;
   const investorID = ObjectID(req.params.id);
 
@@ -153,7 +153,7 @@ router.post('/eedit', (req, res, next) => {
     });
 });
 
-router.get('/entrepreneurs', (req, res, next) => {
+router.get('/entrepreneurs', ensureAuthenticated, (req, res, next) => {
   const entrepreneurs = req.app.locals.entrepreneurs;
 
   entrepreneurs
@@ -162,7 +162,7 @@ router.get('/entrepreneurs', (req, res, next) => {
     .then(entrepreneurs => res.render('entrepreneurs', { entrepreneurs }));
 });
 
-router.get('/entrepreneurs/:id', (req, res, next) => {
+router.get('/entrepreneurs/:id', ensureAuthenticated, (req, res, next) => {
   const entrepreneurs = req.app.locals.entrepreneurs;
   const entrepreneurID = ObjectID(req.params.id);
 
