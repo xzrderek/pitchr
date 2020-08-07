@@ -20,7 +20,7 @@ const profileRouter = require('./routes/profile');
 
 var app = express();
 
-MongoClient.connect('mongodb://localhost:27017/blogdb', (err, client) => {
+MongoClient.connect(process.env.DB_CONNECTION, (err, client) => {
   if (err) {
     throw err;
   }
