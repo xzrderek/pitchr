@@ -29,7 +29,7 @@ router.post('/create-post', (req, res, next) => {
         .insertOne({ title, eventdate, time, image, content, meet, date, author: username })
         .then(() => {
             req.flash('success', 'Post registered successfully');
-            res.redirect('/create-post');
+            res.redirect('/posts');
         })
         .catch(() => {
             req.flash('error', 'We could not create the blog post');
