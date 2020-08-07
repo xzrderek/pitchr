@@ -131,7 +131,6 @@ router.get('/eedit', ensureAuthenticated, (req, res, next) => {
 router.post('/eedit', (req, res, next) => {
   const { cname, cdescription, seek, industry, image, website, revenue, location } = req.body;
   const entrepreneurs = req.app.locals.entrepreneurs;
-  const name = req.user.name;
   const contact = req.user.email;
   const type = "entrepreneur";
   // console.log(username);
@@ -142,7 +141,7 @@ router.post('/eedit', (req, res, next) => {
   // const hashedPassword = utils.hashPassword(password);
 
   entrepreneurs
-    .insertOne({ cname, cdescription, seek, industry, image, website, revenue, location, author: name, info: contact, type: type })
+    .insertOne({ cname, cdescription, seek, industry, image, website, revenue, location, info: contact, type: type })
     .then(() => {
       req.flash('success', 'Profile successfully set up')
       res.redirect('/entrepreneurs'); //now log in, never actually see the flash because taken to diff page
